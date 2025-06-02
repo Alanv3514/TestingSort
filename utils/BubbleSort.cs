@@ -2,7 +2,7 @@ namespace TestingSort.utils
 {
     public static class BubbleSort
     {
-        public static void ArrayInt(int[] array)
+        public static void Sort(int[] array)
         {
             int n = array.Length;
             for (int i = 0; i < n - 1; i++)
@@ -19,7 +19,7 @@ namespace TestingSort.utils
             }
         }
 
-        public static void ArrayDouble(double[] array)
+        public static void Sort(double[] array)
         {
             int n = array.Length;
             for (int i = 0; i < n - 1; i++)
@@ -36,7 +36,7 @@ namespace TestingSort.utils
             }
         }
 
-        public static void ArrayString(string[] array)
+        public static void Sort(string[] array)
         {
             int n = array.Length;
             for (int i = 0; i < n - 1; i++)
@@ -53,5 +53,4 @@ namespace TestingSort.utils
             }
         }
     }
-
 }

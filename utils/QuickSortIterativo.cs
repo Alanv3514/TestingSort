@@ -2,7 +2,7 @@ namespace TestingSort.utils
 {
     public static class QuickSortIterativo
     {
-        public static void ArrayInt(int[] arr)
+        public static void Sort(int[] arr)
         {
             int[] izquierda = new int[arr.Length];
             int[] derecha = new int[arr.Length];
@@ -25,14 +25,10 @@ namespace TestingSort.utils
                     if (arr[j] < pivote)
                     {
                         i++;
-                        int temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
+                        (arr[i], arr[j]) = (arr[j], arr[i]);
                     }
                 }
-                int tempPivot = arr[i + 1];
-                arr[i + 1] = arr[der];
-                arr[der] = tempPivot;
+                (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
 
                 izquierda[++tope] = izq;
@@ -43,7 +39,7 @@ namespace TestingSort.utils
             }
         }
 
-        public static void ArrayDouble(double[] arr)
+        public static void Sort(double[] arr)
         {
             int[] izquierda = new int[arr.Length];
             int[] derecha = new int[arr.Length];
@@ -66,14 +62,10 @@ namespace TestingSort.utils
                     if (arr[j] < pivote)
                     {
                         i++;
-                        double temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
+                        (arr[i], arr[j]) = (arr[j], arr[i]);
                     }
                 }
-                double tempPivot = arr[i + 1];
-                arr[i + 1] = arr[der];
-                arr[der] = tempPivot;
+                (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
 
                 izquierda[++tope] = izq;
@@ -84,7 +76,7 @@ namespace TestingSort.utils
             }
         }
 
-        public static void ArrayString(string[] arr)
+        public static void Sort(string[] arr)
         {
             int[] izquierda = new int[arr.Length];
             int[] derecha = new int[arr.Length];
@@ -107,14 +99,10 @@ namespace TestingSort.utils
                     if (string.Compare(arr[j], pivote) < 0)
                     {
                         i++;
-                        string temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
+                        (arr[i], arr[j]) = (arr[j], arr[i]);
                     }
                 }
-                string tempPivot = arr[i + 1];
-                arr[i + 1] = arr[der];
-                arr[der] = tempPivot;
+                (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
 
                 izquierda[++tope] = izq;

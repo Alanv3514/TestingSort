@@ -2,7 +2,7 @@ namespace TestingSort.utils
 {
     public static class SelectionSort
     {
-        public static void ArrayInt(int[] arr)
+        public static void Sort(int[] arr)
         {
             int n = arr.Length;
             for (int i = 0; i < n - 1; i++)
@@ -13,13 +13,11 @@ namespace TestingSort.utils
                     if (arr[j] < arr[min])
                         min = j;
                 }
-                int temp = arr[i];
-                arr[i] = arr[min];
-                arr[min] = temp;
+                (arr[i], arr[min]) = (arr[min], arr[i]);
             }
         }
 
-        public static void ArrayDouble(double[] arr)
+        public static void Sort(double[] arr)
         {
             int n = arr.Length;
             for (int i = 0; i < n - 1; i++)
@@ -30,13 +28,11 @@ namespace TestingSort.utils
                     if (arr[j] < arr[min])
                         min = j;
                 }
-                double temp = arr[i];
-                arr[i] = arr[min];
-                arr[min] = temp;
+                (arr[i], arr[min]) = (arr[min], arr[i]);
             }
         }
 
-        public static void ArrayString(string[] arr)
+        public static void Sort(string[] arr)
         {
             int n = arr.Length;
             for (int i = 0; i < n - 1; i++)
@@ -47,9 +43,7 @@ namespace TestingSort.utils
                     if (string.Compare(arr[j], arr[min]) < 0)
                         min = j;
                 }
-                string temp = arr[i];
-                arr[i] = arr[min];
-                arr[min] = temp;
+                (arr[i], arr[min]) = (arr[min], arr[i]);
             }
         }
     }

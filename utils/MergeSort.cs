@@ -1,84 +1,88 @@
+using System;
 
 namespace TestingSort.utils
 {
     public class MergeSort
     {
-        public static void arrayInt(int[] arr, int left, int mid, int right)
+        // int[]
+        public static void Sort(int[] arr, int left, int right)
+        {
+            if (left < right)
+            {
+                int mid = (left + right) / 2;
+                Sort(arr, left, mid);
+                Sort(arr, mid + 1, right);
+                Merge(arr, left, mid, right);
+            }
+        }
+
+        private static void Merge(int[] arr, int left, int mid, int right)
         {
             int[] leftArray = new int[mid - left + 1];
             int[] rightArray = new int[right - mid];
 
-            Array.Copy(arr, left, leftArray, 0, mid - left + 1);
-            Array.Copy(arr, mid + 1, rightArray, 0, right - mid);
+            Array.Copy(arr, left, leftArray, 0, leftArray.Length);
+            Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
 
             int i = 0, j = 0, k = left;
-
             while (i < leftArray.Length && j < rightArray.Length)
-            {
-                arr[k++] = leftArray[i] <= rightArray[j] ? leftArray[i++] : rightArray[j++];
-            }
-
-            while (i < leftArray.Length)
-            {
-                arr[k++] = leftArray[i++];
-            }
-
-            while (j < rightArray.Length)
-            {
-                arr[k++] = rightArray[j++];
-            }
+                arr[k++] = (leftArray[i] <= rightArray[j]) ? leftArray[i++] : rightArray[j++];
+            while (i < leftArray.Length) arr[k++] = leftArray[i++];
+            while (j < rightArray.Length) arr[k++] = rightArray[j++];
         }
 
-        public static void arrayString(string[] arr, int left, int mid, int right)
+        // double[]
+        public static void Sort(double[] arr, int left, int right)
         {
-            string[] leftArray = new string[mid - left + 1];
-            string[] rightArray = new string[right - mid];
-
-            Array.Copy(arr, left, leftArray, 0, mid - left + 1);
-            Array.Copy(arr, mid + 1, rightArray, 0, right - mid);
-
-            int i = 0, j = 0, k = left;
-
-            while (i < leftArray.Length && j < rightArray.Length)
+            if (left < right)
             {
-                arr[k++] = string.Compare(leftArray[i], rightArray[j]) <= 0 ? leftArray[i++] : rightArray[j++];
-            }
-
-            while (i < leftArray.Length)
-            {
-                arr[k++] = leftArray[i++];
-            }
-
-            while (j < rightArray.Length)
-            {
-                arr[k++] = rightArray[j++];
+                int mid = (left + right) / 2;
+                Sort(arr, left, mid);
+                Sort(arr, mid + 1, right);
+                Merge(arr, left, mid, right);
             }
         }
 
-        public static void arrayDouble(double[] arr, int left, int mid, int right)
+        private static void Merge(double[] arr, int left, int mid, int right)
         {
             double[] leftArray = new double[mid - left + 1];
             double[] rightArray = new double[right - mid];
 
-            Array.Copy(arr, left, leftArray, 0, mid - left + 1);
-            Array.Copy(arr, mid + 1, rightArray, 0, right - mid);
+            Array.Copy(arr, left, leftArray, 0, leftArray.Length);
+            Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
 
             int i = 0, j = 0, k = left;
-
             while (i < leftArray.Length && j < rightArray.Length)
-            {
-                arr[k++] = leftArray[i] <= rightArray[j] ? leftArray[i++] : rightArray[j++];
-            }
+                arr[k++] = (leftArray[i] <= rightArray[j]) ? leftArray[i++] : rightArray[j++];
+            while (i < leftArray.Length) arr[k++] = leftArray[i++];
+            while (j < rightArray.Length) arr[k++] = rightArray[j++];
+        }
 
-            while (i < leftArray.Length)
+        // string[]
+        public static void Sort(string[] arr, int left, int right)
+        {
+            if (left < right)
             {
-                arr[k++] = leftArray[i++];
+                int mid = (left + right) / 2;
+                Sort(arr, left, mid);
+                Sort(arr, mid + 1, right);
+                Merge(arr, left, mid, right);
             }
+        }
 
-            while (j < rightArray.Length)
-            {
-                arr[k++] = rightArray[j++];
-            }
+        private static void Merge(string[] arr, int left, int mid, int right)
+        {
+            string[] leftArray = new string[mid - left + 1];
+            string[] rightArray = new string[right - mid];
+
+            Array.Copy(arr, left, leftArray, 0, leftArray.Length);
+            Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
+
+            int i = 0, j = 0, k = left;
+            while (i < leftArray.Length && j < rightArray.Length)
+                arr[k++] = (string.Compare(leftArray[i], rightArray[j]) <= 0) ? leftArray[i++] : rightArray[j++];
+            while (i < leftArray.Length) arr[k++] = leftArray[i++];
+            while (j < rightArray.Length) arr[k++] = rightArray[j++];
         }
     }
 }

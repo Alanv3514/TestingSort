@@ -2,7 +2,7 @@ namespace TestingSort.utils
 {
     public static class QuickSortRecursivo
     {
-        public static void ArrayInt(int[] arr, int izq, int der)
+        public static void Sort(int[] arr, int izq, int der)
         {
             if (izq < der)
             {
@@ -19,12 +19,12 @@ namespace TestingSort.utils
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
 
-                ArrayInt(arr, izq, pos - 1);
-                ArrayInt(arr, pos + 1, der);
+                Sort(arr, izq, pos - 1);
+                Sort(arr, pos + 1, der);
             }
         }
 
-        public static void ArrayDouble(double[] arr, int izq, int der)
+        public static void Sort(double[] arr, int izq, int der)
         {
             if (izq < der)
             {
@@ -41,12 +41,12 @@ namespace TestingSort.utils
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
 
-                ArrayDouble(arr, izq, pos - 1);
-                ArrayDouble(arr, pos + 1, der);
+                Sort(arr, izq, pos - 1);
+                Sort(arr, pos + 1, der);
             }
         }
 
-        public static void ArrayString(string[] arr, int izq, int der)
+        public static void Sort(string[] arr, int izq, int der)
         {
             if (izq < der)
             {
@@ -63,8 +63,8 @@ namespace TestingSort.utils
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
 
-                ArrayString(arr, izq, pos - 1);
-                ArrayString(arr, pos + 1, der);
+                Sort(arr, izq, pos - 1);
+                Sort(arr, pos + 1, der);
             }
         }
     }
