@@ -1,115 +1,163 @@
+using System;
+
 namespace TestingSort.utils
 {
     public static class QuickSortIterativo
     {
-        public static void Sort(int[] arr)
+        public static void Sort(int[] arr) => SortInt(arr);
+        public static void Sort(long[] arr) => SortLong(arr);
+        public static void Sort(float[] arr) => SortFloat(arr);
+        public static void Sort(double[] arr) => SortDouble(arr);
+        public static void Sort(decimal[] arr) => SortDecimal(arr);
+        public static void Sort(string[] arr) => SortString(arr);
+
+        private static void SortInt(int[] arr)
         {
-            int[] izquierda = new int[arr.Length];
-            int[] derecha = new int[arr.Length];
-            int tope = -1;
+            int[] left = new int[arr.Length];
+            int[] right = new int[arr.Length];
+            int top = -1;
+            left[++top] = 0;
+            right[top] = arr.Length - 1;
 
-            izquierda[++tope] = 0;
-            derecha[tope] = arr.Length - 1;
-
-            while (tope >= 0)
+            while (top >= 0)
             {
-                int izq = izquierda[tope];
-                int der = derecha[tope--];
-
-                if (izq >= der) continue;
-
-                int pivote = arr[der];
-                int i = izq - 1;
-                for (int j = izq; j < der; j++)
-                {
-                    if (arr[j] < pivote)
-                    {
-                        i++;
-                        (arr[i], arr[j]) = (arr[j], arr[i]);
-                    }
-                }
-                (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
-                int pos = i + 1;
-
-                izquierda[++tope] = izq;
-                derecha[tope] = pos - 1;
-
-                izquierda[++tope] = pos + 1;
-                derecha[tope] = der;
+                int l = left[top];
+                int r = right[top--];
+                if (l >= r) continue;
+                int pivot = arr[r];
+                int i = l - 1;
+                for (int j = l; j < r; j++)
+                    if (arr[j] < pivot)
+                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
+                int p = i + 1;
+                left[++top] = l; right[top] = p - 1;
+                left[++top] = p + 1; right[top] = r;
             }
         }
 
-        public static void Sort(double[] arr)
+        private static void SortLong(long[] arr)
         {
-            int[] izquierda = new int[arr.Length];
-            int[] derecha = new int[arr.Length];
-            int tope = -1;
+            int[] left = new int[arr.Length];
+            int[] right = new int[arr.Length];
+            int top = -1;
+            left[++top] = 0;
+            right[top] = arr.Length - 1;
 
-            izquierda[++tope] = 0;
-            derecha[tope] = arr.Length - 1;
-
-            while (tope >= 0)
+            while (top >= 0)
             {
-                int izq = izquierda[tope];
-                int der = derecha[tope--];
-
-                if (izq >= der) continue;
-
-                double pivote = arr[der];
-                int i = izq - 1;
-                for (int j = izq; j < der; j++)
-                {
-                    if (arr[j] < pivote)
-                    {
-                        i++;
-                        (arr[i], arr[j]) = (arr[j], arr[i]);
-                    }
-                }
-                (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
-                int pos = i + 1;
-
-                izquierda[++tope] = izq;
-                derecha[tope] = pos - 1;
-
-                izquierda[++tope] = pos + 1;
-                derecha[tope] = der;
+                int l = left[top];
+                int r = right[top--];
+                if (l >= r) continue;
+                long pivot = arr[r];
+                int i = l - 1;
+                for (int j = l; j < r; j++)
+                    if (arr[j] < pivot)
+                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
+                int p = i + 1;
+                left[++top] = l; right[top] = p - 1;
+                left[++top] = p + 1; right[top] = r;
             }
         }
 
-        public static void Sort(string[] arr)
+        private static void SortFloat(float[] arr)
         {
-            int[] izquierda = new int[arr.Length];
-            int[] derecha = new int[arr.Length];
-            int tope = -1;
+            int[] left = new int[arr.Length];
+            int[] right = new int[arr.Length];
+            int top = -1;
+            left[++top] = 0;
+            right[top] = arr.Length - 1;
 
-            izquierda[++tope] = 0;
-            derecha[tope] = arr.Length - 1;
-
-            while (tope >= 0)
+            while (top >= 0)
             {
-                int izq = izquierda[tope];
-                int der = derecha[tope--];
+                int l = left[top];
+                int r = right[top--];
+                if (l >= r) continue;
+                float pivot = arr[r];
+                int i = l - 1;
+                for (int j = l; j < r; j++)
+                    if (arr[j] < pivot)
+                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
+                int p = i + 1;
+                left[++top] = l; right[top] = p - 1;
+                left[++top] = p + 1; right[top] = r;
+            }
+        }
 
-                if (izq >= der) continue;
+        private static void SortDouble(double[] arr)
+        {
+            int[] left = new int[arr.Length];
+            int[] right = new int[arr.Length];
+            int top = -1;
+            left[++top] = 0;
+            right[top] = arr.Length - 1;
 
-                string pivote = arr[der];
-                int i = izq - 1;
-                for (int j = izq; j < der; j++)
-                {
-                    if (string.Compare(arr[j], pivote) < 0)
-                    {
-                        i++;
-                        (arr[i], arr[j]) = (arr[j], arr[i]);
-                    }
-                }
-                (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
-                int pos = i + 1;
+            while (top >= 0)
+            {
+                int l = left[top];
+                int r = right[top--];
+                if (l >= r) continue;
+                double pivot = arr[r];
+                int i = l - 1;
+                for (int j = l; j < r; j++)
+                    if (arr[j] < pivot)
+                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
+                int p = i + 1;
+                left[++top] = l; right[top] = p - 1;
+                left[++top] = p + 1; right[top] = r;
+            }
+        }
 
-                izquierda[++tope] = izq;
-                derecha[tope] = pos - 1;
+        private static void SortDecimal(decimal[] arr)
+        {
+            int[] left = new int[arr.Length];
+            int[] right = new int[arr.Length];
+            int top = -1;
+            left[++top] = 0;
+            right[top] = arr.Length - 1;
 
-                izquierda[++tope] = pos + 1;
-                derecha[tope] = der;
+            while (top >= 0)
+            {
+                int l = left[top];
+                int r = right[top--];
+                if (l >= r) continue;
+                decimal pivot = arr[r];
+                int i = l - 1;
+                for (int j = l; j < r; j++)
+                    if (arr[j] < pivot)
+                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
+                int p = i + 1;
+                left[++top] = l; right[top] = p - 1;
+                left[++top] = p + 1; right[top] = r;
+            }
+        }
+
+        private static void SortString(string[] arr)
+        {
+            int[] left = new int[arr.Length];
+            int[] right = new int[arr.Length];
+            int top = -1;
+            left[++top] = 0;
+            right[top] = arr.Length - 1;
+
+            while (top >= 0)
+            {
+                int l = left[top];
+                int r = right[top--];
+                if (l >= r) continue;
+                string pivot = arr[r];
+                int i = l - 1;
+                for (int j = l; j < r; j++)
+                    if (string.Compare(arr[j], pivot) < 0)
+                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
+                int p = i + 1;
+                left[++top] = l; right[top] = p - 1;
+                left[++top] = p + 1; right[top] = r;
             }
         }
     }
