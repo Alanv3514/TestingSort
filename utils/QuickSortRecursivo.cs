@@ -19,7 +19,12 @@ namespace TestingSort.utils
                 int i = izq - 1;
                 for (int j = izq; j < der; j++)
                     if (arr[j] < pivote)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
                 SortInt(arr, izq, pos - 1);
@@ -35,7 +40,12 @@ namespace TestingSort.utils
                 int i = izq - 1;
                 for (int j = izq; j < der; j++)
                     if (arr[j] < pivote)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        long temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
                 SortLong(arr, izq, pos - 1);
@@ -51,7 +61,12 @@ namespace TestingSort.utils
                 int i = izq - 1;
                 for (int j = izq; j < der; j++)
                     if (arr[j] < pivote)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        float temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
                 SortFloat(arr, izq, pos - 1);
@@ -67,7 +82,12 @@ namespace TestingSort.utils
                 int i = izq - 1;
                 for (int j = izq; j < der; j++)
                     if (arr[j] < pivote)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        double temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
                 SortDouble(arr, izq, pos - 1);
@@ -83,7 +103,12 @@ namespace TestingSort.utils
                 int i = izq - 1;
                 for (int j = izq; j < der; j++)
                     if (arr[j] < pivote)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        decimal temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
                 SortDecimal(arr, izq, pos - 1);
@@ -99,7 +124,12 @@ namespace TestingSort.utils
                 int i = izq - 1;
                 for (int j = izq; j < der; j++)
                     if (string.Compare(arr[j], pivote) < 0)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        string temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[der]) = (arr[der], arr[i + 1]);
                 int pos = i + 1;
                 SortString(arr, izq, pos - 1);

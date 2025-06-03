@@ -17,7 +17,11 @@ namespace TestingSort.utils
             for (int i = 0; i < n - 1; i++)
                 for (int j = 0; j < n - i - 1; j++)
                     if (arr[j] > arr[j + 1])
-                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
         }
 
         private static void SortLong(long[] arr)
@@ -26,7 +30,11 @@ namespace TestingSort.utils
             for (int i = 0; i < n - 1; i++)
                 for (int j = 0; j < n - i - 1; j++)
                     if (arr[j] > arr[j + 1])
-                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                    {
+                        long temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
         }
 
         private static void SortFloat(float[] arr)
@@ -35,7 +43,11 @@ namespace TestingSort.utils
             for (int i = 0; i < n - 1; i++)
                 for (int j = 0; j < n - i - 1; j++)
                     if (arr[j] > arr[j + 1])
-                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                    {
+                        float temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
         }
 
         private static void SortDouble(double[] arr)
@@ -44,7 +56,11 @@ namespace TestingSort.utils
             for (int i = 0; i < n - 1; i++)
                 for (int j = 0; j < n - i - 1; j++)
                     if (arr[j] > arr[j + 1])
-                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                    {
+                        double temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
         }
 
         private static void SortDecimal(decimal[] arr)
@@ -53,7 +69,12 @@ namespace TestingSort.utils
             for (int i = 0; i < n - 1; i++)
                 for (int j = 0; j < n - i - 1; j++)
                     if (arr[j] > arr[j + 1])
-                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                    {
+                        decimal temp = arr[j];  
+                        arr[j] = arr[j + 1];  
+                        arr[j + 1] = temp;  
+                    }
+
         }
 
         private static void SortString(string[] arr)
@@ -62,7 +83,12 @@ namespace TestingSort.utils
             for (int i = 0; i < n - 1; i++)
                 for (int j = 0; j < n - i - 1; j++)
                     if (string.Compare(arr[j], arr[j + 1]) > 0)
-                        (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                    {
+                        string temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+
         }
     }
 

@@ -28,7 +28,12 @@ namespace TestingSort.utils
                 int i = l - 1;
                 for (int j = l; j < r; j++)
                     if (arr[j] < pivot)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        int temp = arr[i]; 
+                        arr[i] = arr[j]; 
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
                 int p = i + 1;
                 left[++top] = l; right[top] = p - 1;
@@ -53,7 +58,12 @@ namespace TestingSort.utils
                 int i = l - 1;
                 for (int j = l; j < r; j++)
                     if (arr[j] < pivot)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        long temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
                 int p = i + 1;
                 left[++top] = l; right[top] = p - 1;
@@ -78,7 +88,12 @@ namespace TestingSort.utils
                 int i = l - 1;
                 for (int j = l; j < r; j++)
                     if (arr[j] < pivot)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        float temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
                 int p = i + 1;
                 left[++top] = l; right[top] = p - 1;
@@ -103,7 +118,12 @@ namespace TestingSort.utils
                 int i = l - 1;
                 for (int j = l; j < r; j++)
                     if (arr[j] < pivot)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        double temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
                 int p = i + 1;
                 left[++top] = l; right[top] = p - 1;
@@ -128,7 +148,12 @@ namespace TestingSort.utils
                 int i = l - 1;
                 for (int j = l; j < r; j++)
                     if (arr[j] < pivot)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        decimal temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
                 int p = i + 1;
                 left[++top] = l; right[top] = p - 1;
@@ -153,7 +178,12 @@ namespace TestingSort.utils
                 int i = l - 1;
                 for (int j = l; j < r; j++)
                     if (string.Compare(arr[j], pivot) < 0)
-                        (arr[++i], arr[j]) = (arr[j], arr[i]);
+                    {
+                        i++;
+                        string temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
                 (arr[i + 1], arr[r]) = (arr[r], arr[i + 1]);
                 int p = i + 1;
                 left[++top] = l; right[top] = p - 1;

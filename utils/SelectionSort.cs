@@ -18,7 +18,10 @@ namespace TestingSort.utils
                 for (int j = i + 1; j < n; j++)
                     if (arr[j] < arr[min])
                         min = j;
-                (arr[i], arr[min]) = (arr[min], arr[i]);
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
             }
         }
 
@@ -31,7 +34,10 @@ namespace TestingSort.utils
                 for (int j = i + 1; j < n; j++)
                     if (arr[j] < arr[min])
                         min = j;
-                (arr[i], arr[min]) = (arr[min], arr[i]);
+                i++;
+                long temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
             }
         }
 
@@ -44,7 +50,10 @@ namespace TestingSort.utils
                 for (int j = i + 1; j < n; j++)
                     if (arr[j] < arr[min])
                         min = j;
-                (arr[i], arr[min]) = (arr[min], arr[i]);
+                i++;
+                float temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
             }
         }
 
@@ -57,7 +66,10 @@ namespace TestingSort.utils
                 for (int j = i + 1; j < n; j++)
                     if (arr[j] < arr[min])
                         min = j;
-                (arr[i], arr[min]) = (arr[min], arr[i]);
+                i++;
+                double temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
             }
         }
 
@@ -70,7 +82,10 @@ namespace TestingSort.utils
                 for (int j = i + 1; j < n; j++)
                     if (arr[j] < arr[min])
                         min = j;
-                (arr[i], arr[min]) = (arr[min], arr[i]);
+                i++;
+                decimal temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
             }
         }
 
@@ -83,7 +98,11 @@ namespace TestingSort.utils
                 for (int j = i + 1; j < n; j++)
                     if (string.Compare(arr[j], arr[min]) < 0)
                         min = j;
-                (arr[i], arr[min]) = (arr[min], arr[i]);
+                    
+                i++;
+                string temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
             }
         }
     }

@@ -30,9 +30,23 @@ namespace TestingSort.utils
             Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
             int i = 0, j = 0, k = left;
             while (i < leftArray.Length && j < rightArray.Length)
-                arr[k++] = (leftArray[i] <= rightArray[j]) ? leftArray[i++] : rightArray[j++];
-            while (i < leftArray.Length) arr[k++] = leftArray[i++];
-            while (j < rightArray.Length) arr[k++] = rightArray[j++];
+            {
+                if (leftArray[i] <= rightArray[j])
+                {
+                    arr[k] = leftArray[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = rightArray[j];
+                    j++;
+                }
+                k++;
+            }
+            while (i < leftArray.Length) 
+                arr[k++] = leftArray[i++];
+            while (j < rightArray.Length)
+                arr[k++] = rightArray[j++];
         }
 
         private static void SortLong(long[] arr, int left, int right)
@@ -54,7 +68,20 @@ namespace TestingSort.utils
             Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
             int i = 0, j = 0, k = left;
             while (i < leftArray.Length && j < rightArray.Length)
-                arr[k++] = (leftArray[i] <= rightArray[j]) ? leftArray[i++] : rightArray[j++];
+            {
+                if (leftArray[i] <= rightArray[j])
+                {
+                    arr[k] = leftArray[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = rightArray[j];
+                    j++;
+                }
+                k++;
+            }
+
             while (i < leftArray.Length) arr[k++] = leftArray[i++];
             while (j < rightArray.Length) arr[k++] = rightArray[j++];
         }
@@ -78,9 +105,24 @@ namespace TestingSort.utils
             Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
             int i = 0, j = 0, k = left;
             while (i < leftArray.Length && j < rightArray.Length)
-                arr[k++] = (leftArray[i] <= rightArray[j]) ? leftArray[i++] : rightArray[j++];
-            while (i < leftArray.Length) arr[k++] = leftArray[i++];
-            while (j < rightArray.Length) arr[k++] = rightArray[j++];
+            {
+                if (leftArray[i] <= rightArray[j])
+                {
+                    arr[k] = leftArray[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = rightArray[j];
+                    j++;
+                }
+                k++;
+            }
+
+            while (i < leftArray.Length) 
+                arr[k++] = leftArray[i++];
+            while (j < rightArray.Length) 
+                arr[k++] = rightArray[j++];
         }
 
         private static void SortDouble(double[] arr, int left, int right)
@@ -102,9 +144,24 @@ namespace TestingSort.utils
             Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
             int i = 0, j = 0, k = left;
             while (i < leftArray.Length && j < rightArray.Length)
-                arr[k++] = (leftArray[i] <= rightArray[j]) ? leftArray[i++] : rightArray[j++];
-            while (i < leftArray.Length) arr[k++] = leftArray[i++];
-            while (j < rightArray.Length) arr[k++] = rightArray[j++];
+            {
+                if (leftArray[i] <= rightArray[j])
+                {
+                    arr[k] = leftArray[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = rightArray[j];
+                    j++;
+                }
+                k++;
+            }
+
+            while (i < leftArray.Length) 
+                arr[k++] = leftArray[i++];
+            while (j < rightArray.Length) 
+                arr[k++] = rightArray[j++];
         }
 
         private static void SortDecimal(decimal[] arr, int left, int right)
@@ -126,9 +183,23 @@ namespace TestingSort.utils
             Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
             int i = 0, j = 0, k = left;
             while (i < leftArray.Length && j < rightArray.Length)
-                arr[k++] = (leftArray[i] <= rightArray[j]) ? leftArray[i++] : rightArray[j++];
-            while (i < leftArray.Length) arr[k++] = leftArray[i++];
-            while (j < rightArray.Length) arr[k++] = rightArray[j++];
+            {
+                if (leftArray[i] <= rightArray[j])
+                {
+                    arr[k] = leftArray[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = rightArray[j];
+                    j++;
+                }
+                k++;
+            }
+            while (i < leftArray.Length) 
+                arr[k++] = leftArray[i++];
+            while (j < rightArray.Length) 
+                arr[k++] = rightArray[j++];
         }
 
         private static void SortString(string[] arr, int left, int right)
@@ -150,9 +221,23 @@ namespace TestingSort.utils
             Array.Copy(arr, mid + 1, rightArray, 0, rightArray.Length);
             int i = 0, j = 0, k = left;
             while (i < leftArray.Length && j < rightArray.Length)
-                arr[k++] = (string.Compare(leftArray[i], rightArray[j]) <= 0) ? leftArray[i++] : rightArray[j++];
-            while (i < leftArray.Length) arr[k++] = leftArray[i++];
-            while (j < rightArray.Length) arr[k++] = rightArray[j++];
+            {
+                if (string.Compare(leftArray[i], rightArray[j]) <= 0)
+                {
+                    arr[k] = leftArray[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = rightArray[j];
+                    j++;
+                }
+                k++;
+            }
+            while (i < leftArray.Length) 
+                arr[k++] = leftArray[i++];
+            while (j < rightArray.Length) 
+                arr[k++] = rightArray[j++];
         }
     }
 }
