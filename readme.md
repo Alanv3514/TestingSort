@@ -69,5 +69,6 @@ Compilar y ejecutar el proyecto con cualquier entorno .NET compatible:
 ## Autores
 * [Ansa, Santiago](https://github.com/santiansaa)
 * [Vinzon, Alan](https://github.com/Alanv3514)
+* [Torrilla, Agustin](https://github.com/Agus-Torri05)
 
 Proyecto realizado como parte de la asignatura Programación 1 - T.U.P. UTN F.R. Paraná, 2025.
